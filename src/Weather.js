@@ -8,9 +8,9 @@ export default function Weather() {
     <input type="search" placeholder="Enter a city" className="form-control-sm"/> 
     <input type="submit" value="Search" className="btn btn-sm btn-secondary"  />
 </form>
-<div>New York City</div>
-<div>Clear sky</div>
-<img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear sky" /> <span className>10ºC|F</span>
+<div className="city">New York City</div>
+<div className="description">Clear sky</div>
+<img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear sky" /> <span className="temperature">10ºC|F</span>
 <ul>
     <li> Humidity: 10%</li>
     <li> Wind: 20 km/h</li>
