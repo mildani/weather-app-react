@@ -6,7 +6,7 @@ import "./Weather.css"
 
 
 export default function Weather(props) {
-const [city, setCity] = useState("");
+const [city, setCity] = useState(props.defaultCity);
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
 
@@ -25,11 +25,15 @@ const [city, setCity] = useState("");
     setLoaded(true);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function search() {
     let apiKey = "3a94f3778290bfeee61278505dbbe51d";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
   }
 
   function updateCity(event) {
@@ -56,8 +60,6 @@ const [city, setCity] = useState("");
     <li> Wind: {weather.wind} km/h</li>
 </ul>
 </div>)} else {
-     let apiKey = "3a94f3778290bfeee61278505dbbe51d";
-     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-     axios.get(apiUrl).then(displayWeather)
+     search();
     return "Loading"
 }}
