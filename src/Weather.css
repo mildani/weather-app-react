@@ -1,6 +1,7 @@
 .Weather {
     color: #878787;
-    border: 1px solid #dadde1}
+    border: 1px solid #dadde1;
+max-width: 600px}
 
 .Weather ul {
 font-size: 16px;

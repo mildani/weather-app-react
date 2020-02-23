@@ -1,0 +1,21 @@
+.WeatherForecast {
+    margin-top: 30px;
+}
+
+.WeatherForecast img {
+    max-height: 50px;
+    position: relative;
+    top: -14px;
+}
+
+.WeatherForecast .hours {
+   
+}
+
+.WeatherForecast .temp {
+  
+}
+
+.WeatherForecast .separator {
+    margin-bottom: 15px;
+}
