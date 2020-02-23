@@ -7,7 +7,7 @@ export default function App() {
     <div className="App">
       <div className="container">
       <header>
-          <Weather />
+          <Weather defaultCity="New York"/>
       </header>
       <footer><a href="https://github.com/mildani/weather-app-react" target="_blank" rel="noopener noreferrer">Open-source code</a> by mildani</footer>
     </div></div>
