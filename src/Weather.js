@@ -1,14 +1,13 @@
 import React, {useState} from "react"
-import FormattedDate from "./FormattedDate"
+import WeatherInfo from "./WeatherInfo"
 import axios from "axios"
 import "./Weather.css"
 
 
-
 export default function Weather(props) {
 const [city, setCity] = useState(props.defaultCity);
-  const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
+  const [loaded, setLoaded] = useState(false);
 
   function displayWeather(response) {
     setWeather({
@@ -51,14 +50,7 @@ const [city, setCity] = useState(props.defaultCity);
     return (
     <div className="Weather">
 {form}
-<div className="timestamp"><FormattedDate date={weather.date} /></div>
-<div className="city">{weather.city}</div>
-<div className="description">{weather.description}</div>
-<img src={weather.icon} alt={weather.description} /> <span className="temperature">{Math.round(weather.temperature)}ºC|F</span>
-<ul>
-    <li> Humidity: {weather.humidity}%</li>
-    <li> Wind: {weather.wind} km/h</li>
-</ul>
+<WeatherInfo data={weather} />
 </div>)} else {
      search();
     return "Loading"
